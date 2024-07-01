@@ -18,10 +18,6 @@
             {
                 Console.WriteLine("There are " + stockSoda + " soda, do not order more!\n");
             }
-            else if (stockSoda > 100)
-            {
-                Console.WriteLine("There are " + stockSoda + " soda please double check stock and do not order more!\n");
-            }
             else if (stockSoda < 99 && stockSoda > 41)
             {
                 Console.WriteLine("There are " + stockSoda + " soda. Do not order more!\n");
@@ -45,10 +41,6 @@
             {
                 Console.WriteLine("There are " + stockChip + " chips, plese do not order more!\n");
             }
-            else if (stockChip > 40)
-            {
-                Console.WriteLine("There are " + stockChip + " chips, please double check stock and do not order more!\n");
-            }
             else if (stockChip < 40 && stockChip > 20)
             {
                 Console.WriteLine("There are " + stockChip + " chips, please do not order more!\n");
@@ -71,10 +63,6 @@
             else if (stockCandy == 60)
             {
                 Console.WriteLine("There is " + stockCandy + " candy, please do not order more!\n");
-            }
-            else if (stockCandy > 60)
-            {
-                Console.WriteLine("There is " + stockCandy + " candy, please double check stock and do not order more!\n");
             }
             else if (stockCandy < 60 && stockCandy > 40)
             {
