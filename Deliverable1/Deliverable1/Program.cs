@@ -4,63 +4,86 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please eneter the values of total units sold below.");
-
-            Console.Write("How many sodas have been sold today? 100 in stock.");
-            int soldSoda = int.Parse(Console.ReadLine());
             int stockSoda = 100;
-            int totalSoda = (stockSoda - soldSoda);
-            if (soldSoda > 100)
+            int restockSoda = 40;
+            Console.Write("How many sodas have been sold today? " + stockSoda + " in stock.\n");
+            int soldSoda = int.Parse(Console.ReadLine());
+            stockSoda -= soldSoda;
+
+            if (stockSoda > 100)
             {
-                Console.WriteLine("Value to high, please double check stock. Stock not adjusted.");
+                Console.WriteLine("Invalid sold ammount, please double check stock!\n");
             }
-            else if (soldSoda <= 100)
+            else if (stockSoda == 100)
             {
-                Console.WriteLine("There is " + totalSoda + " soda left in stock.");
+                Console.WriteLine("There are " + stockSoda + " soda, do not order more!\n");
+            }
+            else if (stockSoda > 100)
+            {
+                Console.WriteLine("There are " + stockSoda + " soda please double check stock and do not order more!\n");
+            }
+            else if (stockSoda < 99 && stockSoda > 41)
+            {
+                Console.WriteLine("There are " + stockSoda + " soda. Do not order more!\n");
+            }
+            else if (stockSoda <= restockSoda)
+            {
+                Console.WriteLine("There are " + stockSoda + " soda, please order more!\n");
             }
 
-            Console.Write("How many chips were sold today? 40 in stock. ");
-            int soldChip = int.Parse(Console.ReadLine());
             int stockChip = 40;
-            int totalChip = (stockChip - soldChip);
-            if (soldChip > 40)
+            int restockChip = 20;
+            Console.Write("How many chips were sold today? " + stockChip + " in stock.\n");
+            int soldChip = int.Parse(Console.ReadLine());
+            stockChip -= soldChip;
+
+            if (stockChip > 40)
             {
-                Console.WriteLine("Value to high, please double check stock. Stock not adjusted.");
+                Console.WriteLine("Invalid sold ammount, please double check stock!\n");
             }
-            else if (soldChip <= 40)
+            else if (stockChip == 40)
             {
-                Console.WriteLine("There are " + totalChip + " chips left in stock");
+                Console.WriteLine("There are " + stockChip + " chips, plese do not order more!\n");
+            }
+            else if (stockChip > 40)
+            {
+                Console.WriteLine("There are " + stockChip + " chips, please double check stock and do not order more!\n");
+            }
+            else if (stockChip < 40 && stockChip > 20)
+            {
+                Console.WriteLine("There are " + stockChip + " chips, please do not order more!\n");
+            }
+            else if (stockChip <= restockChip)
+            {
+                Console.WriteLine("There are " + stockChip + " chips, please order more!\n");
             }
 
-
-            Console.Write("How much candy was sold today? 60 in stock.");
-            int soldCandy = int.Parse(Console.ReadLine());
             int stockCandy = 60;
-            int totalCandy = (stockCandy - soldCandy);
-            if (soldCandy > 60)
-            {
-                Console.WriteLine("Value to high, please double check stock. Stock not adjusted.");
-            }
-            else if (soldCandy <= 60)
-            {
-                Console.WriteLine("There are " + totalCandy + " candy left in stock");
-            }
+            int restockCandy = 40;
+            Console.Write("How much candy was sold today? " + stockCandy + " in stock.\n");
+            int soldCandy = int.Parse(Console.ReadLine());
+            stockCandy -= soldCandy;
 
-            Console.WriteLine("Thank you for filling out the stock! Below is a list of what needs ordered!");
-            if (totalSoda <= 40)
+            if (stockCandy > 60)
             {
-                Console.WriteLine("Please order more soda. ");
+                Console.WriteLine("Invalid sold ammount, please double check stock!\n");
             }
-
-
-            if (totalChip <= 20)
+            else if (stockCandy == 60)
             {
-                Console.WriteLine("Please order more chips. ");
+                Console.WriteLine("There is " + stockCandy + " candy, please do not order more!\n");
             }
-            if (totalCandy <= 40)
+            else if (stockCandy > 60)
             {
-                Console.WriteLine("Please order more candy. ");
-            }   
+                Console.WriteLine("There is " + stockCandy + " candy, please double check stock and do not order more!\n");
+            }
+            else if (stockCandy < 60 && stockCandy > 40)
+            {
+                Console.WriteLine("There is " + stockCandy + " candy, please do not order more!\n");
+            }
+            else if (stockCandy <= restockCandy)
+            {
+                Console.WriteLine("There is " + stockCandy + " candy, please order more!\n");
+            }
+        }
         }
     }
-}
